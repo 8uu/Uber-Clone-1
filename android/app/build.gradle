@@ -8,7 +8,7 @@ if (localPropertiesFile.exists()) {
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+    throw new FileNotFoundException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
@@ -45,15 +45,15 @@ android {
 
     buildTypes {
         debug{
-            buildConfigField 'String', "ApiKey", MAPS_API_KEY
-            resValue 'string', "ApiKey", MAPS_API_KEY
+            buildConfigField 'String', "AIzaSyA28-4wOHdmSeKSmSwlcHkn0SoeBkSvR3o", MAPS_API_KEY
+            resValue 'string', "AIzaSyA28-4wOHdmSeKSmSwlcHkn0SoeBkSvR3o", MAPS_API_KEY
         }
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
-            buildConfigField 'String', "ApiKey", MAPS_API_KEY
-            resValue 'string', "ApiKey", MAPS_API_KEY
+            buildConfigField 'String', "AIzaSyA28-4wOHdmSeKSmSwlcHkn0SoeBkSvR3o", MAPS_API_KEY
+            resValue 'string', "AIzaSyA28-4wOHdmSeKSmSwlcHkn0SoeBkSvR3o", MAPS_API_KEY
         }
     }
 }
